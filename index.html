@@ -1,134 +1,449 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-    <head>
-        <title>INDEX</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Styles -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio</title>
+<!-- Js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- css -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    /* FONTS */
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
 
-        <!-- CSS -->  
-        <style>
 
-            .main {
-                margin: 0;
-                padding: 0;
-                position: relative;
-                align-items: center;
-                align-content: center;
-                max-width: max-content;
-                text-align: center;
-                
-            }
+    /* VAR css */
+    :root {
+    --header-height: ;
 
-            /* Fonts */
-            @import url('https://fonts.googleapis.com/css?family=Alegreya+Sans&display=swap');
-            @import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&display=swap');
+    /*========== Colors ==========*/
+    /* Change favorite color */
+    --hue-color: ; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
 
-            /* a herf */
-            a:link,
-            a:hover,
-            a:visited 
-                {
-                    text-decoration: none;
-                    color: #000;
-                }
+    /* HSL color mode */
+    --first-color: ;
+    --first-color-second: ;
+    --first-color-alt: ;
+    --first-color-lighter: ;
+    --title-color: ;
+    --text-color: ;
+    --text-color-light: ;
+    --input-color: ;
+    --body-color: ;
+    --container-color: ;
 
-            a:link.white,
-            a:hover.white,
-            a:visited.white 
-                {
-                    text-decoration: none;
-                    color: #fff;
-                }
+     /*========== Font and typography ==========*/
+    --body-font: 'Josefin Sans', sans-serif;
+        
+    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
 
-            /* Navbar */
-            .navbar-text
-            {
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
 
-            }
+    /*========== Margenes Bottom ==========*/
+    /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
 
-            .portfolio
-            {
-                text-align: left;
-                padding: 5px;
-                color: red;
-            }
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+    }
 
-            img{
-                border: #000;
-                border-radius: 20pt;
-                border-width: 5pt;
-                height: 200px;
-                width: auto;    
-            }
+    /* Font size for large devices */
+    @media screen and (min-width: 968px) {
+        :root {
+            --big-font-size: 3rem;
+            --h1-font-size: 2.25rem;
+            --h2-font-size: 1.5rem;
+            --h3-font-size: 1.25rem;
+            --normal-font-size: 1rem;
+            --small-font-size: .875rem;
+            --smaller-font-size: .813rem
+        }
+    }
 
-            h1{
-                font-size: 20pt;
-            }
+    /*========== Variables Dark theme ==========*/
 
-            h2{
-                font-size: 14pt;
-            }
 
-            .but{
-                background-position: right;
-                background-color: #D68910;
-                color:#fff;
-                text-align: right;    
-            }
-        </style>
-    </head>
+    /*========== Button Dark/Light ==========*/
 
-    <body>
-        <div class="main">
-        <div class="navbar-text">
-            <a href="index.html">HOME</a>
+
+    /*==================== BASE ====================*/
+    *{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 3px 0 0 20px; /*top right bottom left*/
+    }
+
+    html{
+        scroll-behavior: smooth;
+    }
+
+    .borderless{
+        border: 0 2px 0 2px;
+        border-color    : black;
+    }
+
+    body{
+         margin: 0 0 var(--header-height) 0 ;
+         font-family: var(--body-font);
+         font-size: var(--normal-font-size);
+         background-color: var(--body-color);
+         color: var(--text-color);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4{
+        color: var(--title-color);
+        font-weight: var(--font-semi-bold);
+    }
+
+    ul{
+        list-style: none;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    pre{
+        font-family: var(--body-font);
+        text-align: left;
+    }
+
+    img{
+        max-width: 20%;
+        height: auto;
+    }
+    /*==================== REUSABLE CSS CLASSES ====================*/
+
+    .section{
+        padding: 2rem 0 4rem;
+    }
+
+    .section_title{
+        font-size: var(--h1-font-size);
+    }
+
+    .section_subtile{
+        display: block;
+        font-size: var(--small-font-size);
+        margin-bottom: var(--mb-3);
+    }
+
+    .section_title,
+    .section_subtile{
+        text-align: center;
+    }
+
+    .container{
+        max-width: 789px;
+        margin-left: var(--mb-1-5);
+        margin-right: var(--mb-1-5);
+    }
+
+    .grip{
+        display: grid;
+        gap: 1.5rem; 
+    }
+
+    .header{
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: var(--z-fixed);
+        background-color: var(--body-color);
+    }
+    /*==================== LAYOUT ====================*/
+
+
+    /*==================== NAV ====================*/
+    .nav{
+        max-width:  968px;
+        height: var(--header-height);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav__logo,
+    .nav__toogle{
+        color: var(--title-color);
+        font-weight: var(--font-medium);
+    }
+
+    .nav__logo:hover{
+        color: var(--first-color)
+    }
+    
+    .nav__toogle{
+        font-size: 1.rem;
+        cursor: pointer;
+    }
+
+    .nav__toogle:hover{
+        color: var(--first-color)
+    }
+
+    @media screen and (max-width: 767px) {
+        .nav__menu{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--body-color);
+            padding: 2rem 1.5rem 4rem;
+            box-shadow: 0 -1px 4px rgba(0,0,0,.15);
+            border-radius: 1.5rem 1.5rem 0 0;
+            transition: .3s; 
+        }
+
+        .nav__list{
+            grid-template-columns: repeat(3. 5fr);
+            gap: 2rem;
+        }
+
+        .nav__link{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: var(--small-font-size);
+            color: var(--title-color);
+            font-weight: var(--font-medium);
+        }
+
+        .nav__link:hover{
+            color: var(--first-color);
+        }
+
+        .nav__icon{
+            font-size: 1.2rem;
+        }
+        
+        .nav__close{
+            position: absolute;
+            right: 1.3rem;
+            bottom: .5rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--first-color)
+        }
+
+        .nav__close:hover{
+            color: var(--first-color-alt);
+        }
+    }
+
+    /* Change background header */
+
+
+    /*==================== HOME ====================*/
+    .home__container{
+        gap: 1rem;
+    }
+
+    .home__content{
+        grid-template-columns: .5fr 3fr;
+        padding-top: 3.5rem;
+        align-items: center;
+    }
+
+    .home__social{
+        display: grid;
+        grid-template-columns: max-content;
+        row-gap: 1rem;
+    }
+
+    .home__social-icon{
+        font-size: 1.25rem;
+        color: var(--first-color);
+    }
+
+    .home__social-icon:hover{
+        color: var(--first-color-alt);
+    }
+
+    .home__blop{
+        width: 200px;
+        fill: var(--first-color)
+    }
+
+    .home__blop-img{
+        width: 170px;
+    }
+
+    .home__data{
+        grid-column: 1/3;
+    }
+
+    .home__title{
+        font-size: var(--big-font-size);
+    }
+
+    .home__subtitle{
+        font-size: var(--h3-font-size);
+        color: var(--text-color);
+        font-weight: var(--font-medium);
+        margin-bottom: var(--mb-0-75);
+    }
+
+    .home__description{
+        margin-bottom: var(--mb-2);
+    }
+
+    .home__scroll{
+        display: none;
+    }
+
+    .home__scroll-button{
+        color: var(--first-color);
+        transition: .3s;
+    }
+
+    .home__scroll-button:hover{
+        transform: translateY(.25rem);
+    }
+
+    .home__scroll-mouse{
+        font-size: 2rem;
+    }
+
+    .home__scroll-name{
+        font-size: var(--small-font-size);
+        color: var(--title-color);
+        font-weight: var(--font-medium);
+        margin-right: var(--mb-2-5);
+    }
+
+    .home__scroll-arrow{
+        font: 1.25rem;
+    }
+
+    /*==================== BUTTONS ====================*/
+    .button{
+       display: inline-block;
+       background-color: black;
+       color: white;
+       padding: 1rem;
+       border-radius: .5rem;
+       font-weight: var(--font-medium); 
+    }
+
+    .button:hover{
+            background-color: var(--first-color-alt);
+    }
+    
+    .button__icon{
+        font-size: 1.25rem;
+        margin-left: var(--mb-0-5);
+        transition: .3s;
+    }
+
+    .button__flex{
+        display: inline;
+        align-items: center;            
+     }  
+
+</style>
+</head>
+<body>
+<div class="m-4">
+    <nav class="navbar navbar-expand-lg" style="background-color:white">
+        <div class="container-fluid">
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a href="#" class="nav-item nav-link" style="color: black; font-weight: bold;">Home</a>
+                </div>
+            </div>
         </div>
-            <table class="portfolio">
-                <tr>
-                    <td><img src="1.jpg"></td>
-                    <td><h1>Felicia Yuli W.</h1>
-                        <h2>26416080</h2>
-                        <pre>
-                        <b>Mata kuliah pendukung:</b>
-                        - Jarkom
-                        - Android
-                        - Magang
-                        </pre>
-                        <a class="but" href="hobby26416080.html">Hobbies</a>
-                    </td>
-                          
-                </tr> 
-                <tr>
-                    <td><img src="3.jpg"></td>
-                    <td><h1>Felicia Yuli W.</h1>
-                        <h2>26416080</h2>
-                        <pre>
-                        <b>Mata kuliah pendukung:</b>
-                        - Jarkom
-                        - Android
-                        - Magang
-                        </pre>
-                        <button><a href="hobby26416080.html">Hobbies</a></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td><img src="2.jpg"></td>
-                    <td><h1>Felicia Yuli W.</h1>
-                        <h2>26416080</h2>
-                        <pre>
-                        <b>Mata kuliah pendukung:</b>
-                        - Jarkom
-                        - Android
-                        - Magang
-                        </pre>
-                        <button><a href="hobby26416080.html">Hobbies</a></button>
-                    </td>
-                </tr>   
-            </table>
-         </div>
+    </nav>
+</div>
 
+<div class="home__section">
+    <div class="home__data">
+        <table>
+            <tr> 
+                <td>
+                    <img src="female.png" alt="">
+                </td>
+                <td class="borderle">    
+                    <img src="male.png" alt="">
+                </td>
+                <td>    
+                    <img src="male.png" alt="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h1 class="home__title">Felicia Y</h1>
+                    <h3 class="home__subtitle">26416080 - Teknologi Informasi</h3>
+                    <pre class="home__description"> 
+                        <b>Mata kuliah penunjang:</b>
+                        - Pemograman Perangkat Mobile, 
+                        - Java
+                        - IoT
+                        - Teknologi Web
+                        - Android
+                        - dll.
+                    </pre>
+                    <a href="hobby26416080.html" class="button">Hobbies</a>
+                </td>
+                
+                <td class="borderle">
+                    <h1 class="home__title">Andre Cristo</h1>
+                    <h3 class="home__subtitle">26416080 - Teknologi Informasi</h3>
+                    <pre class="home__description"> 
+                        <b>Mata kuliah penunjang:</b>
+                        - Pemograman Perangkat Mobile, 
+                        - Java
+                        - IoT
+                        - Teknologi Web
+                        - Android
+                        - dll.
+                    </pre>
+                    <a href="hobby26416080.html" class="button">Hobbies</a>
+                </td>
+
+                <td>
+                    <h1 class="home__title">Jason A</h1>
+                    <h3 class="home__subtitle">26416080 - Teknologi Informasi</h3>
+                    <pre class="home__description"> 
+                        <b>Mata kuliah penunjang:</b>
+                        - Pemograman Perangkat Mobile, 
+                        - Java
+                        - IoT
+                        - Teknologi Web
+                        - Android
+                        - dll.
+                    </pre>
+                    <a href="hobby26416080.html" class="button">Hobbies</a>    
+                </td>
+            </tr>
+        </table>
     </div>
-    </body>
+</div>
+</body>
 </html>
